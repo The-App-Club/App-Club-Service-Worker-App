@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <label for="icons">Icons:</label>
+    <select id="icons">
+      <option value="icons/ic_create_new_folder_black_48dp.png">
+        New Folder
+      </option>
+      <option value="icons/ic_file_upload_black_48dp.png">File Upload</option>
+      <option value="icons/ic_folder_black_48dp.png">Closed Folder</option>
+      <option value="icons/ic_folder_open_black_48dp.png">Open Folder</option>
+      <option value="icons/ic_folder_shared_black_48dp.png">
+        Shared Folder
+      </option>
+    </select>
+    <button id="show">Show Icon</button>
+    <div id="container">
+      <img src="icons/ic_create_new_folder_black_48dp.png" />
+    </div>
+    <script>
+      if ('serviceWorker' in navigator) {
+        navigator.serviceWorker.register('service-worker.js');
+      }
+
+      document.querySelector('#show').addEventListener('click', () => {
+        const iconUrl =
+          document.querySelector('select').selectedOptions[0].value;
+        let imgElement = document.createElement('img');
+        imgElement.src = iconUrl;
+        document.querySelector('#container').appendChild(imgElement);
+      });
+    </script>
+  </body>
+</html>

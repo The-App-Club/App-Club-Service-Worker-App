@@ -1,0 +1,57 @@
+*,
+::before,
+::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  padding: 50px;
+}
+
+.controller {
+  padding: 30px;
+}
+
+.workspace {
+  max-width: 100%;
+  height: 50vh;
+  margin: 10px auto;
+  padding: 50px;
+  border: 1px solid #000;
+  display: flex;
+  justify-content: flex-start;
+  flex-wrap: wrap;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.item {
+  margin: 10px;
+}
+
+.prime-area {
+  border: 1px solid black;
+  padding: 10px;
+  height: 100px;
+  width: 300px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+.item::before {
+  content: 'jobId: ' attr(data-item-id);
+}
+
+input {
+  width: 80px;
+}
+
+button {
+  padding: 10px;
+}
+
+.status {
+  color: darkred;
+}

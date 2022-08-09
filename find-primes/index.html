@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./index.css" />
+    <script type="module" src="./index.js"></script>
+  </head>
+  <body>
+    <div class="controller">
+      <p>
+        Do a prime number search from <input id="from" value="1" /> to
+        <input id="to" value="200000" />.
+      </p>
+      <button class="search">Searching</button>
+    </div>
+
+    <div id="app"></div>
+
+    <script defer type="javascript/worker" src="./findPrimesWorker.js"></script>
+  </body>
+</html>
